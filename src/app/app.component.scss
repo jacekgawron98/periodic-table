@@ -1,0 +1,17 @@
+.main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter {
+  width: 25%;
+}

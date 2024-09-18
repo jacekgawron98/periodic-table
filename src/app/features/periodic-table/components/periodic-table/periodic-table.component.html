@@ -1,0 +1,32 @@
+<mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="position">
+    <mat-header-cell *matHeaderCellDef>Number</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <table-cell [element]="element.position"></table-cell>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <table-cell [element]="element.name"></table-cell>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="weight">
+    <mat-header-cell *matHeaderCellDef>Weight</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <table-cell [element]="element.weight"></table-cell>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="symbol">
+    <mat-header-cell *matHeaderCellDef>Symbol</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <table-cell [element]="element.symbol"></table-cell>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

@@ -1,0 +1,11 @@
+<div [matMenuTriggerFor]="menu" class="cell">
+  {{ data }}
+</div>
+<mat-menu #menu="matMenu">
+  <div mat-menu-item [disableRipple]="true" (click)="$event.stopPropagation()">
+    <mat-form-field class="form-field">
+      <input matInput placeholder="value" [formControl]="elementControl" />
+    </mat-form-field>
+    <button mat-button (click)="updateValue()">Save</button>
+  </div>
+</mat-menu>
