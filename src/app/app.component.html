@@ -1,13 +1,13 @@
 <main class="main">
   <div class="content">
-    @if (isLoading) {
+    @if (isLoading$ | async) {
     <mat-spinner></mat-spinner>
     } @else {
-    <filter-input
-      [filter]="filterData.bind(this)"
-      class="filter"
-    ></filter-input>
-    <periodic-table [dataSource]="elementsData"></periodic-table>
+    <filter-input class="filter"></filter-input>
+    <periodic-table
+      *ngIf="tableDataSource$ | async as elementData"
+      [dataSource$]="elementData"
+    ></periodic-table>
     }
   </div>
 </main>

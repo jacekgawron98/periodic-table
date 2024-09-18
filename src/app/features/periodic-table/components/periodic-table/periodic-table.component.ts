@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { TableCell } from '../table-cell/table-cell.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'periodic-table',
@@ -13,6 +14,7 @@ import { TableCell } from '../table-cell/table-cell.component';
   templateUrl: './periodic-table.component.html',
   styleUrls: ['./periodic-table.component.scss'],
   imports: [
+    CommonModule,
     MatTableModule,
     MatMenuModule,
     MatButtonModule,
@@ -22,6 +24,6 @@ import { TableCell } from '../table-cell/table-cell.component';
   ],
 })
 export class PeriodicTable {
-  @Input() dataSource!: MatTableDataSource<PeriodicElement>;
+  @Input() dataSource$!: MatTableDataSource<PeriodicElement>;
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 }
